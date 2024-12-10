@@ -120,10 +120,12 @@ export function Header() {
                             <MobileNavLink href="/#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/login" variant="outline">
-                              Log in
+                            <Button href="#" className="opacity-40 cursor-not-allowed pointer-events-none">
+                              App Store
                             </Button>
-                            <Button href="#">Download the app</Button>
+                            <Button href="#">
+                              Google Play
+                            </Button>
                           </div>
                         </PopoverPanel>
                       </>
@@ -132,11 +134,14 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
+            {/* <Button href="/login" variant="outline" className="hidden lg:block">
               Log in
+            </Button> */}
+            <Button href="#" className="hidden lg:block opacity-40 cursor-not-allowed pointer-events-none mr-4">
+              App Store
             </Button>
             <Button href="#" className="hidden lg:block">
-              Download
+              Google Play
             </Button>
           </div>
         </Container>

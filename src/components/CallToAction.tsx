@@ -22,7 +22,8 @@ export function CallToAction() {
             first investment.
           </p>
           <div className="mt-8 flex justify-center">
-            <AppStoreLink color="white" />
+            <AppStoreLink color="white" type="appstore" />
+            <AppStoreLink color="white" type="googleplay" />
           </div>
         </div>
       </Container>
