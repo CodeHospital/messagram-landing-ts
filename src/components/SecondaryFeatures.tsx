@@ -4,39 +4,39 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Cross-Platform Support',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      'Access your messages on any device - mobile or desktop. Seamlessly switch between platforms without missing a beat.',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'Smart Message Routing',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      'Configure custom rules to forward specific messages to different Telegram chats or groups.',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'Instant Delivery',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Messages are forwarded in real-time, ensuring you never miss important communications.',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'Multiple Recipients',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+      'Forward messages to multiple Telegram chats simultaneously - perfect for team communications.',
     icon: DeviceListIcon,
   },
   {
-    name: 'Encrypted and anonymized',
+    name: 'End-to-End Encryption',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Your messages are secured with enterprise-grade encryption, ensuring complete privacy and security.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Portfolio tracking',
+    name: 'Message History',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Keep track of all forwarded messages with a comprehensive history and search functionality.',
     icon: DeviceChartIcon,
   },
 ]
@@ -51,19 +51,16 @@ function DeviceArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         fill="#737373"
       />
       <path
-        d="M12 25l8-8m0 0h-6m6 0v6"
-        stroke="#171717"
-        strokeWidth={2}
-        strokeLinecap="round"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 25l8-8-8-8-2 2 6 6-6 6 2 2z"
+        fill="#171717"
       />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
   )
 }
 
 function DeviceCardsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  let id = useId()
-
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
       <path
@@ -76,23 +73,8 @@ function DeviceCardsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9 13a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm1 5a1 1 0 00-1 1v2a1 1 0 001 1h12a1 1 0 001-1v-2a1 1 0 00-1-1H10z"
-        fill={`url(#${id}-gradient)`}
+        fill="#171717"
       />
-      <rect x={9} y={6} width={14} height={4} rx={1} fill="#171717" />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
-      <defs>
-        <linearGradient
-          id={`${id}-gradient`}
-          x1={16}
-          y1={12}
-          x2={16}
-          y2={28}
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#737373" />
-          <stop offset={1} stopColor="#737373" stopOpacity={0} />
-        </linearGradient>
-      </defs>
     </svg>
   )
 }
@@ -100,17 +82,16 @@ function DeviceCardsIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function DeviceClockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
+        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
         fill="#737373"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M24 32a8 8 0 100-16 8 8 0 000 16zm1-8.414V19h-2v5.414l4 4L28.414 27 25 23.586z"
+        d="M16 14a1 1 0 011 1v6h2a1 1 0 110 2h-3a1 1 0 01-1-1v-7a1 1 0 011-1z"
         fill="#171717"
       />
     </svg>
@@ -119,23 +100,19 @@ function DeviceClockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function DeviceListIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
         fill="#737373"
       />
-      <circle cx={11} cy={14} r={2} fill="#171717" />
-      <circle cx={11} cy={20} r={2} fill="#171717" />
-      <circle cx={11} cy={26} r={2} fill="#171717" />
       <path
-        d="M16 14h6M16 20h6M16 26h6"
-        stroke="#737373"
-        strokeWidth={2}
-        strokeLinecap="square"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M23 13v2H9v-2h14zm0 6v2H9v-2h14zm0 6v2H9v-2h14z"
+        fill="#171717"
       />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
   )
 }
@@ -143,17 +120,16 @@ function DeviceListIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function DeviceLockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
+        d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
         fill="#737373"
       />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M18 19.5a3.5 3.5 0 117 0V22a2 2 0 012 2v6a2 2 0 01-2 2h-7a2 2 0 01-2-2v-6a2 2 0 012-2v-2.5zm2 2.5h3v-2.5a1.5 1.5 0 00-3 0V22z"
+        d="M16 23a3 3 0 100-6 3 3 0 000 6zm-1-13v4h2v-4a1 1 0 112 0v4h2a2 2 0 012 2v6a2 2 0 01-2 2H11a2 2 0 01-2-2v-6a2 2 0 012-2h2v-4a3 3 0 116 0z"
         fill="#171717"
       />
     </svg>
@@ -162,7 +138,7 @@ function DeviceLockIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function DeviceChartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -181,7 +157,6 @@ function DeviceChartIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         strokeWidth={2}
         strokeLinecap="square"
       />
-      <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
   )
 }
@@ -196,11 +171,10 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            Every feature you need to bridge your communications.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+            Messagram comes with all the features you need to ensure seamless message forwarding between SMS and Telegram.
           </p>
         </div>
         <ul

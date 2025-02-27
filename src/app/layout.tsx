@@ -1,7 +1,7 @@
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import clsx from 'clsx';
-import Head from 'next/head'; // Import for dynamic head content
+import GoogleAdsense from '../components/GoogleAdsense';
 
 import '@/styles/tailwind.css';
 
@@ -13,11 +13,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Pocket',
-    default: 'Pocket - Invest at the perfect time.',
+    template: '%s - Messagram',
+    default: 'Messagram - Bridge Your SMS to Telegram',
   },
   description:
-    'By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses.',
+    "Connect your SMS messages with Telegram seamlessly. Perfect for couples staying in touch or businesses managing communications efficiently.",
+  verification: {
+    google: 'ca-pub-2499635055097290'
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://messagram.app',
+    title: 'Messagram - Bridge Your SMS to Telegram',
+    description: 'Share your SMS messages instantly on Telegram. Keep loved ones connected or streamline business communications with our reliable message bridging service.',
+    siteName: 'Messagram',
+  },
 };
 
 export default function RootLayout({
@@ -27,15 +38,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={clsx('bg-gray-50 antialiased', inter.variable)}>
-      <Head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499635055097290"
-          crossOrigin="anonymous"
-        />
-        <meta name="google-adsense-account" content="ca-pub-2499635055097290" />
-      </Head>
       <body>{children}</body>
+      <GoogleAdsense pId="2499635055097290" />
     </html>
   );
 }
